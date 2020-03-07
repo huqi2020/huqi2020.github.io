@@ -275,7 +275,7 @@
                 post-container">
 
                 <h1 id="rsyslogd—日志及集中化管理"><a href="#rsyslogd—日志及集中化管理" class="headerlink" title="rsyslogd—日志及集中化管理"></a>rsyslogd—日志及集中化管理</h1><h2 id="rsyslog-简介"><a href="#rsyslog-简介" class="headerlink" title="rsyslog 简介"></a>rsyslog 简介</h2><p>rsyslog 在Linux上自带，兼容syslog语法，在syslog基础上增加了更多协议的支持，配合额外module插件可以完成很多场景的使用。借用下官网的图片：</p>
-<p><img src="640.png" alt="rsyslogd—日志及集中化管理"><br><img src="640.png" alt="/opt/blog/source/img/rsyslog-日志集中化管理工具"></p>
+<p><img src="641.png" alt="rsyslogd—日志及集中化管理"><br><img src="640.png" alt="/opt/blog/source/img/rsyslog-日志集中化管理工具"></p>
 <p>注： Windows 平台需要 nxlog （nxlog 是用C 语言写的一个跨平台日志收集处理软件）。</p>
 <p>最近遇到一个需求，需要把线上环境的debug日志及集中化收集起来，一方面是方便开发调试；一方面是避免直接到线上环境查看，存在安全隐患。</p>
 <h2 id="常用可选方案"><a href="#常用可选方案" class="headerlink" title="常用可选方案"></a>常用可选方案</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">rsyslog发送端 + rsyslog接收端： 直接存在接收端的本地硬盘</span><br><span class="line"></span><br><span class="line">rsyslog发送端 + logstash接收端 + &lt;后续第三方处理&gt;： 接受到log更新行后，通过logstash简单处理后，可以继续往第三方处理，如放到ElasticSearch，或者放到消息队列Kfaka等</span><br><span class="line"></span><br><span class="line">rsyslog发送端 + Splunk： Splunk是商业软件，也是业内用的比较多的方式，价格不菲</span><br></pre></td></tr></table></figure>
