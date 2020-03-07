@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://dusign.net/2020/03/05/Centos7-%E7%B3%BB%E7%BB%9F%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/</loc>
+    <loc>https://dusign.net/2020/03/07/rsyslog-%E6%97%A5%E5%BF%97%E9%9B%86%E4%B8%AD%E5%8C%96%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2020-03-07</lastmod>
   </url>  <url>
-    <loc>https://dusign.net/2020/03/07/rssyslogd-%E6%97%A5%E5%BF%97%E9%9B%86%E4%B8%AD%E5%8C%96%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/</loc>
+    <loc>https://dusign.net/2020/03/05/Centos7-%E7%B3%BB%E7%BB%9F%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/</loc>
     <lastmod>2020-03-07</lastmod>
   </url>  <url>
     <loc>https://dusign.net/2019/11/01/Hexo-Theme-Snail/</loc>
