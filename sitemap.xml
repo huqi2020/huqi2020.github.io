@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://dusign.net/2020/03/09/python-%25E6%2597%25A5%25E5%25BF%2597%25E5%25A4%2584%25E7%2590%2586/</loc>
+    
+    <lastmod>2020-03-10T09:16:33.439Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://dusign.net/2020/03/09/docker-nextcloud%25E6%2590%25AD%25E5%25BB%25BA%25E7%25A7%2581%25E6%259C%2589%25E5%2590%258C%25E6%25AD%25A5%25E7%25BD%2591%25E7%259B%2598/</loc>
     
     <lastmod>2020-03-10T09:01:43.451Z</lastmod>
@@ -26,13 +33,6 @@
     <loc>https://dusign.net/2020/03/10/Centos-%25E6%259B%25B4%25E6%258D%25A2%25E5%259B%25BD%25E5%2586%2585yum%25E6%25BA%2590/</loc>
     
     <lastmod>2020-03-10T08:48:14.422Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dusign.net/2020/03/09/python-%25E6%2597%25A5%25E5%25BF%2597%25E5%25A4%2584%25E7%2590%2586/</loc>
-    
-    <lastmod>2020-03-10T08:45:44.409Z</lastmod>
     
   </url>
   

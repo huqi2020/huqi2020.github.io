@@ -286,7 +286,7 @@
 <p>2.自定义配置(可选)。logging标准模块支持三种配置方式: dictConfig，fileConfig，listen。其中，dictConfig是通过一个字典进行配置Logger，Handler，Filter，Formatter；fileConfig则是通过一个文件进行配置；而listen则监听一个网络端口，通过接收网络数据来进行配置。当然，除了以上集体化配置外，也可以直接调用Logger，Handler等对象中的方法在代码中来显式配置。</p>
 <p>3.使用logging模块的全局作用域中的getLogger函数来得到一个Logger对象实例(其参数即是一个字符串，表示Logger对象实例的名字，即通过该名字来得到相应的Logger对象实例)。</p>
 <p>4.使用Logger对象中的debug，info，error，warn，critical等方法记录日志信息。</p>
-<h3 id="logging模块处理流程"><a href="#logging模块处理流程" class="headerlink" title="logging模块处理流程"></a>logging模块处理流程</h3><p><img src="/Users/huqi/Desktop/屏幕快照 2020-02-28 下午9.41.12.png" alt="屏幕快照 2020-02-28 下午9.41.12"></p>
+<h3 id="logging模块处理流程"><a href="#logging模块处理流程" class="headerlink" title="logging模块处理流程"></a>logging模块处理流程</h3><p><img src="640.jpeg" alt="python-日志处理"></p>
 <p>1.判断日志的等级是否大于Logger对象的等级，如果大于，则往下执行，否则，流程结束。</p>
 <p>2.产生日志。第一步，判断是否有异常，如果有，则添加异常信息。第二步，处理日志记录方法(如debug，info等)中的占位符，即一般的字符串格式化处理。</p>
 <p>3.使用注册到Logger对象中的Filters进行过滤。如果有多个过滤器，则依次过滤；只要有一个过滤器返回假，则过滤结束，且该日志信息将丢弃，不再处理，而处理流程也至此结束。否则，处理流程往下执行。</p>
@@ -320,7 +320,7 @@
 <p>注意：日志的输出级别是由loggers中的每个模块中level选项定义。如果没有配置，那么默认为warning级别。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">handlers与loggers都存在level，两者不同：</span><br><span class="line"><span class="number">1</span>、loggers中的level表示可以接受的错误级别，就是说loggers接受level或者比level更高级别的错误，由propagate决定:propagate为<span class="literal">True</span>, 则向上传播；</span><br><span class="line"><span class="number">2</span>、handlers的level表示日志级别</span><br></pre></td></tr></table></figure>
 <h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> logging </span><br><span class="line">logger = logging.getLogger(<span class="string">'django'</span>)</span><br><span class="line">logger.info(<span class="string">'-------------------------'</span>)</span><br><span class="line">logger.error(str(e))</span><br><span class="line">logger.warn(<span class="string">'warn'</span>)</span><br><span class="line">logger.debug(<span class="string">'debug'</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><p><img src="/Users/huqi/Desktop/屏幕快照 2020-02-25 下午3.47.31.png" alt="屏幕快照 2020-02-25 下午3.47.31"></p>
+<h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><p><img src="640-1.jpeg" alt="python-日志处理"></p>
 
                 
                 <hr>
