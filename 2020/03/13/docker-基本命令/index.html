@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="baidu-site-verification" content="093lY4ziMu" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="A hexo theme">
+    <meta name="keyword"  content="dusign, hexo-theme-snail">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!--<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>-->
+    <title>
+        
+          docker—基本命令 - Hexo-theme-snail
+        
+    </title>
+
+    <link rel="canonical" href="https://dusign.net/2020/03/13/docker-基本命令/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS --> 
+    
+        
+<link rel="stylesheet" href="/css/dusign-light.css">
+
+        
+<link rel="stylesheet" href="/css/dusign-common-light.css">
+
+        
+<link rel="stylesheet" href="/css/font-awesome.css">
+
+        
+<link rel="stylesheet" href="/css/toc.css">
+
+        <!-- background effects end -->
+    
+    
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    
+<link rel="stylesheet" href="/css/widget.css">
+
+
+    
+<link rel="stylesheet" href="/css/rocket.css">
+
+
+    
+<link rel="stylesheet" href="/css/signature.css">
+
+
+    
+<link rel="stylesheet" href="/css/fonts.googleapis.css">
+
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <!-- photography -->
+    
+<link rel="stylesheet" href="/css/photography.css">
+
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- background effects start -->
+    
+    <!-- background effects end -->
+
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            
+                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('snail-bg.jpg')
+                /*post*/
+            
+        
+    }
+    
+    #signature{
+        background-image: url('/img/signature/dusign.png');
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#Linux_docker" title="Linux_docker">Linux_docker</a>
+                            
+                        </div>
+                        <h1>docker—基本命令</h1>
+                        <h2 class="subheading">Every man is his own hero.</h2>
+                        <span class="meta">
+                            Posted by (IT-胡齐) on
+                            2020-03-13
+                        </span>
+
+                        
+                            <div class="blank_box"></div>
+                            <span class="meta">
+                                Words <span class="post-count">1k</span> and
+                                Reading Time <span class="post-count">5</span> Minutes
+                            </span>
+                            <div class="blank_box"></div>
+                            <!-- 不蒜子统计 start -->
+                            <span class="meta">
+                                Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+                            </span>
+                            <!-- 不蒜子统计 end -->
+                        
+
+                    </div>
+                
+
+                </div>
+            </div>
+        </div>      
+    </div>
+
+    
+    <div class="waveWrapper">
+        <div class="wave wave_before" style="background-image: url('/img/wave-light.png')"></div>
+        <div class="wave wave_after" style="background-image: url('/img/wave-light.png')"></div>
+    </div>
+    
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">运维猫-胡齐</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/categories/">Categories</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/photography/">Photography</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                    
+                    <li>
+                        <a href="https://blog.csdn.net/yunweimao" target="_blank">Chinese Blog</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h2 id="查看系统-docker-层面信息"><a href="#查看系统-docker-层面信息" class="headerlink" title="查看系统(docker)层面信息"></a>查看系统(docker)层面信息</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">[root@elasticsearch-02 ~]# docker info</span><br><span class="line">Containers: 1</span><br><span class="line"> Running: 0</span><br><span class="line"> Paused: 0</span><br><span class="line"> Stopped: 1</span><br><span class="line">Images: 1</span><br><span class="line">Server Version: 1.13.1</span><br><span class="line">Storage Driver: overlay2</span><br><span class="line"> Backing Filesystem: xfs</span><br><span class="line"> Supports d_type: true</span><br><span class="line"> Native Overlay Diff: true</span><br><span class="line">Logging Driver: journald</span><br><span class="line">Cgroup Driver: systemd</span><br><span class="line">Plugins: </span><br><span class="line"> Volume: local</span><br><span class="line"> Network: bridge host macvlan null overlay</span><br><span class="line">Swarm: inactive</span><br><span class="line">Runtimes: docker-runc runc</span><br><span class="line">Default Runtime: docker-runc</span><br><span class="line">Init Binary: /usr/libexec/docker/docker-init-current</span><br><span class="line">containerd version:  (expected: aa8187dbd3b7ad67d8e5e3a15115d3eef43a7ed1)</span><br><span class="line">runc version: 66aedde759f33c190954815fb765eedc1d782dd9 (expected: 9df8b306d01f59d3a8029be411de015b7304dd8f)</span><br><span class="line">init version: fec3683b971d9c3ef73f284f176672c44b448662 (expected: 949e6facb77383876aeff8a6944dde66b3089574)</span><br><span class="line">Security Options:</span><br><span class="line"> seccomp</span><br><span class="line">  WARNING: You're not using the default seccomp profile</span><br><span class="line">  Profile: /etc/docker/seccomp.json</span><br><span class="line"> selinux</span><br><span class="line">Kernel Version: 3.10.0-957.el7.x86_64</span><br><span class="line">Operating System: CentOS Linux 7 (Core)</span><br><span class="line">OSType: linux</span><br><span class="line">Architecture: x86_64</span><br><span class="line">Number of Docker Hooks: 3</span><br><span class="line">CPUs: 2</span><br><span class="line">Total Memory: 9.607 GiB</span><br><span class="line">Name: elasticsearch-02</span><br><span class="line">ID: 7EVF:7RJV:W22Q:V5QV:2H3K:EXMN:C2WD:YV5O:WZBI:5ZL5:RREV:VYJ6</span><br><span class="line">Docker Root Dir: /var/lib/docker</span><br><span class="line">Debug Mode (client): false</span><br><span class="line">Debug Mode (server): false</span><br><span class="line">Registry: https://index.docker.io/v1/</span><br><span class="line">WARNING: bridge-nf-call-iptables is disabled</span><br><span class="line">WARNING: bridge-nf-call-ip6tables is disabled</span><br><span class="line">Experimental: false</span><br><span class="line">Insecure Registries:</span><br><span class="line"> 127.0.0.0/8</span><br><span class="line">Live Restore Enabled: false</span><br><span class="line">Registries: docker.io (secure)</span><br></pre></td></tr></table></figure>
+<h2 id="查看系统详细信息"><a href="#查看系统详细信息" class="headerlink" title="查看系统详细信息"></a>查看系统详细信息</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@elasticsearch-02 ~]# docker inspect my_container</span><br></pre></td></tr></table></figure>
+<h2 id="搜索镜像"><a href="#搜索镜像" class="headerlink" title="搜索镜像"></a>搜索镜像</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@elasticsearch-02 ~]# docker search centos</span><br><span class="line">INDEX       NAME                                         DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED</span><br><span class="line">docker.io   docker.io/centos                             The official build of CentOS.                   5877      [OK]       </span><br><span class="line">docker.io   docker.io/ansible/centos7-ansible            Ansible on Centos7                              128                  [OK]</span><br><span class="line">docker.io   docker.io/jdeathe/centos-ssh                 OpenSSH / Supervisor / EPEL/IUS/SCL Repos ...   114                  [OK]</span><br><span class="line">docker.io   docker.io/consol/centos-xfce-vnc             Centos container with "headless" VNC sessi...   109                  [OK]</span><br></pre></td></tr></table></figure>
+<h2 id="拉取镜像"><a href="#拉取镜像" class="headerlink" title="拉取镜像"></a>拉取镜像</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@elasticsearch-02 ~]# docker pull centos:latest</span><br><span class="line">Trying to pull repository docker.io/library/centos ... </span><br><span class="line">latest: Pulling from docker.io/library/centos</span><br><span class="line">8a29a15cefae: Pull complete </span><br><span class="line">Digest: sha256:fe8d824220415eed5477b63addf40fb06c3b049404242b31982106ac204f6700</span><br><span class="line">Status: Downloaded newer image for docker.io/centos:latest</span><br></pre></td></tr></table></figure>
+<h2 id="查看本地镜像"><a href="#查看本地镜像" class="headerlink" title="查看本地镜像"></a>查看本地镜像</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@RedHat_test tmp]# docker images</span><br><span class="line">REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE</span><br><span class="line">docker.io/centos    latest              470671670cac        7 weeks ago         237 MB</span><br></pre></td></tr></table></figure>
+<h2 id="创建容器"><a href="#创建容器" class="headerlink" title="创建容器"></a>创建容器</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@elasticsearch-02 ~]# docker create centos:latest</span><br><span class="line">fb0f16442424813ed7b74dfc24151711a89e9a3d71745766c63c4118fbf90771</span><br></pre></td></tr></table></figure>
+<h2 id="查看所有容器，包括停止的"><a href="#查看所有容器，包括停止的" class="headerlink" title="查看所有容器，包括停止的"></a>查看所有容器，包括停止的</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@elasticsearch-02 ~]# docker ps -a</span><br><span class="line">CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES</span><br><span class="line">fb0f16442424        centos:latest       "/bin/bash"         42 seconds ago      Created                                 condescending_cori</span><br></pre></td></tr></table></figure>
+<h2 id="启动容器"><a href="#启动容器" class="headerlink" title="启动容器"></a>启动容器</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@elasticsearch-02 ~]# docker start fb0f16442424</span><br><span class="line">fb0f16442424</span><br></pre></td></tr></table></figure>
+<h2 id="修改镜像的标签"><a href="#修改镜像的标签" class="headerlink" title="修改镜像的标签"></a>修改镜像的标签</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@elasticsearch-02 ~]# docker images</span><br><span class="line">REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE</span><br><span class="line">docker.io/centos    latest              470671670cac        7 weeks ago         237 MB</span><br><span class="line">[root@elasticsearch-02 ~]# docker tag 470671670cac centos:1</span><br><span class="line">[root@elasticsearch-02 ~]# docker images</span><br><span class="line">REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE</span><br><span class="line">centos              1                   470671670cac        7 weeks ago         237 MB</span><br><span class="line">docker.io/centos    latest              470671670cac        7 weeks ago         237 MB</span><br></pre></td></tr></table></figure>
+<h2 id="运行容器（必须先启动容器，才可以进入容器）"><a href="#运行容器（必须先启动容器，才可以进入容器）" class="headerlink" title="运行容器（必须先启动容器，才可以进入容器）"></a>运行容器（必须先启动容器，才可以进入容器）</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@elasticsearch-02 ~]# docker run -dit centos:latest </span><br><span class="line">2b58cb2416dfd5289650a6566f4c6e51a1e419dba179a47405a8b40a1b023e04</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@elasticsearch-02 ~]# docker ps </span><br><span class="line">CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES</span><br><span class="line">2b58cb2416df        centos:latest       "/bin/bash"         5 seconds ago       Up 4 seconds                            happy_feynman</span><br><span class="line">[root@elasticsearch-02 ~]# docker container ls</span><br><span class="line">CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES</span><br><span class="line">2b58cb2416df        centos:latest       "/bin/bash"         17 seconds ago      Up 16 seconds                           happy_feynman</span><br></pre></td></tr></table></figure>
+<h2 id="进入容器"><a href="#进入容器" class="headerlink" title="进入容器"></a>进入容器</h2><h3 id="（如果从这个-stdin-中-exit，会导致容器的停止）"><a href="#（如果从这个-stdin-中-exit，会导致容器的停止）" class="headerlink" title="（如果从这个 stdin 中 exit，会导致容器的停止）"></a>（如果从这个 stdin 中 exit，会导致容器的停止）</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@elasticsearch-02 ~]# docker attach 2b58cb2416df</span><br></pre></td></tr></table></figure>
+<h3 id="（如果从这个-stdin-中-exit，不会导致容器的停止）"><a href="#（如果从这个-stdin-中-exit，不会导致容器的停止）" class="headerlink" title="（如果从这个 stdin 中 exit，不会导致容器的停止）"></a>（如果从这个 stdin 中 exit，不会导致容器的停止）</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@elasticsearch-02 ~]# docker exec -it 2b58cb2416df bash</span><br></pre></td></tr></table></figure>
+<h2 id="退出容器"><a href="#退出容器" class="headerlink" title="退出容器"></a>退出容器</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@elasticsearch-02 ~]# docker ps</span><br><span class="line">CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES</span><br><span class="line">2b58cb2416df        centos:latest       "/bin/bash"         8 minutes ago       Up 8 minutes                            happy_feynman</span><br><span class="line">[root@elasticsearch-02 ~]# docker stop happy_feynman</span><br><span class="line">happy_feynman</span><br><span class="line">[root@elasticsearch-02 ~]# docker ps</span><br><span class="line">CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES</span><br></pre></td></tr></table></figure>
+<h2 id="强制停止容器"><a href="#强制停止容器" class="headerlink" title="强制停止容器"></a>强制停止容器</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@elasticsearch-02 ~]# docker ps</span><br><span class="line">CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES</span><br><span class="line">2b58cb2416df        centos:latest       "/bin/bash"         10 minutes ago      Up 4 seconds                            happy_feynman</span><br><span class="line">[root@elasticsearch-02 ~]# docker kill happy_feynman</span><br><span class="line">happy_feynman</span><br></pre></td></tr></table></figure>
+<h2 id="从容器中取日志"><a href="#从容器中取日志" class="headerlink" title="从容器中取日志"></a>从容器中取日志</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@elasticsearch-02 ~]# docker ps</span><br><span class="line">CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES</span><br><span class="line">04aa90727f09        centos:latest       "/bin/bash"         38 seconds ago      Up 36 seconds                           pedantic_fermi</span><br><span class="line">[root@elasticsearch-02 ~]# docker logs 04aa90727f09</span><br></pre></td></tr></table></figure>
+<h2 id="显示一个运行的容器里面的进程信息"><a href="#显示一个运行的容器里面的进程信息" class="headerlink" title="显示一个运行的容器里面的进程信息"></a>显示一个运行的容器里面的进程信息</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@elasticsearch-02 ~]# docker ps</span><br><span class="line">CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES</span><br><span class="line">04aa90727f09        centos:latest       "/bin/bash"         38 seconds ago      Up 36 seconds                           pedantic_fermi</span><br><span class="line">[root@elasticsearch-02 ~]# docker top 04aa90727f09</span><br><span class="line">UID                 PID                 PPID                C                   STIME               TTY                 TIME                CMD</span><br><span class="line">root                31184               31166               0                   17:46               pts/1               00:00:00            /bin/bash</span><br></pre></td></tr></table></figure>
+<h2 id="删除容器（不能删除一个正在运行的容器）"><a href="#删除容器（不能删除一个正在运行的容器）" class="headerlink" title="删除容器（不能删除一个正在运行的容器）"></a>删除容器（不能删除一个正在运行的容器）</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[root@elasticsearch-02 ~]# docker ps </span><br><span class="line">CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES</span><br><span class="line">2b58cb2416df        centos:latest       "/bin/bash"         12 minutes ago      Up 3 seconds                            happy_feynman</span><br><span class="line">[root@elasticsearch-02 ~]# docker stop happy_feynman</span><br><span class="line">happy_feynman</span><br><span class="line">[root@elasticsearch-02 ~]# docker ps -a</span><br><span class="line">CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                      PORTS               NAMES</span><br><span class="line">2b58cb2416df        centos:latest       "/bin/bash"         12 minutes ago      Exited (0) 9 seconds ago                        happy_feynman</span><br><span class="line">[root@elasticsearch-02 ~]# docker rm 2b58cb2416df</span><br><span class="line">2b58cb2416df</span><br><span class="line">[root@elasticsearch-02 ~]# docker ps -a</span><br><span class="line">CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                      PORTS               NAMES</span><br></pre></td></tr></table></figure>
+<h2 id="一次性删除所有容器"><a href="#一次性删除所有容器" class="headerlink" title="一次性删除所有容器"></a>一次性删除所有容器</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@elasticsearch-02 ~]# docker rm 'docker ps -a -q'</span><br></pre></td></tr></table></figure>
+<h2 id="容器的导出"><a href="#容器的导出" class="headerlink" title="容器的导出"></a>容器的导出</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@elasticsearch-02 ~]# docker ps</span><br><span class="line">CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES</span><br><span class="line">04aa90727f09        centos:latest       "/bin/bash"         20 hours ago        Up 20 hours                             pedantic_fermi</span><br><span class="line">[root@elasticsearch-02 ~]# docker export 04aa90727f09 &gt; tomcat8080.tar</span><br><span class="line">[root@elasticsearch-02 ~]# ls</span><br><span class="line">tomcat8080.tar</span><br></pre></td></tr></table></figure>
+<h2 id="容器的导入"><a href="#容器的导入" class="headerlink" title="容器的导入"></a>容器的导入</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@elasticsearch-02 ~]# ls</span><br><span class="line">tomcat8080.tar </span><br><span class="line">[root@elasticsearch-02 ~]# docker import tomcat8080.tar</span><br><span class="line">sha256:5a7456e811d5fdbb0e4795a4fa2168f526aebe6f716bb5ee6cc2fd1b9699ad4f</span><br><span class="line">[root@elasticsearch-02 ~]# docker images</span><br><span class="line">REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE</span><br><span class="line">&lt;none&gt;              &lt;none&gt;              5a7456e811d5        8 seconds ago       0 B</span><br></pre></td></tr></table></figure>
+<h2 id="容器与主机之间的数据拷贝"><a href="#容器与主机之间的数据拷贝" class="headerlink" title="容器与主机之间的数据拷贝"></a>容器与主机之间的数据拷贝</h2><h3 id="将主机-www-runoob目录拷贝到容器96f7f14e99ab的-www目录下"><a href="#将主机-www-runoob目录拷贝到容器96f7f14e99ab的-www目录下" class="headerlink" title="将主机/www/runoob目录拷贝到容器96f7f14e99ab的/www目录下"></a>将主机/www/runoob目录拷贝到容器96f7f14e99ab的/www目录下</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@RedHat_test tmp]# docker cp /www/runoob 96f7f14e99ab:/www/</span><br></pre></td></tr></table></figure>
+<h3 id="将主机-www-runoob目录拷贝到容器96f7f14e99ab中，目录重命名为www"><a href="#将主机-www-runoob目录拷贝到容器96f7f14e99ab中，目录重命名为www" class="headerlink" title="将主机/www/runoob目录拷贝到容器96f7f14e99ab中，目录重命名为www"></a>将主机/www/runoob目录拷贝到容器96f7f14e99ab中，目录重命名为www</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@RedHat_test tmp]# docker cp /www/runoob 96f7f14e99ab:/www</span><br></pre></td></tr></table></figure>
+<h3 id="将容器96f7f14e99ab的-www目录拷贝到主机的-tmp目录中"><a href="#将容器96f7f14e99ab的-www目录拷贝到主机的-tmp目录中" class="headerlink" title="将容器96f7f14e99ab的/www目录拷贝到主机的/tmp目录中"></a>将容器96f7f14e99ab的/www目录拷贝到主机的/tmp目录中</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@RedHat_test tmp]# docker cp  96f7f14e99ab:/www /tmp/</span><br></pre></td></tr></table></figure>
+
+                
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/2020/03/10/Centos-更换国内yum源/" data-toggle="tooltip" data-placement="top" title="Centos—更换国内yum源">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                <!-- tip start -->
+                
+
+                
+                <div class="comment_notes">
+                    <p>
+                        My name is HuQi
+                    </p>
+                </div>
+                
+                <!-- tip end -->
+
+                <!-- Music start-->
+                
+                
+
+<link rel="stylesheet" href="/css/music-player/fonts/iconfont.css">
+
+
+<link rel="stylesheet" href="/css/music-player/css/reset.css">
+
+
+<link rel="stylesheet" href="/css/music-player/css/player.css">
+
+
+
+<div class="music-player">
+    <audio class="music-player__audio" ></audio>
+    <div class="music-player__main">
+        <div class="music-player__blur"></div>
+        <div class="music-player__disc">
+            <div class="music-player__image">
+                <img width="100%" src="" alt="">
+            </div>
+            <div class="music-player__pointer"><img width="100%" src="/img/cd_tou.png" alt=""></div>
+        </div>
+        <div class="music-player__controls">
+            <div class="music__info">
+                <h3 class="music__info--title">...</h3>
+                <p class="music__info--singer">...</p>
+            </div>
+            <div class="player-control">
+                <div class="player-control__content">
+                    <div class="player-control__btns">
+                        <div class="player-control__btn player-control__btn--prev"><i class="iconfont icon-prev"></i></div>
+                        <div class="player-control__btn player-control__btn--play"><i class="iconfont icon-play"></i></div>
+                        <div class="player-control__btn player-control__btn--next"><i class="iconfont icon-next"></i></div>
+                        <div class="player-control__btn player-control__btn--mode"><i class="iconfont icon-loop"></i></div>
+                    </div>
+                    <div class="player-control__volume">
+                        <div class="control__volume--icon player-control__btn"><i class="iconfont icon-volume"></i></div>
+                        <div class="control__volume--progress player_progress"></div>
+                    </div>
+                </div>
+                <div class="player-control__content">
+                    <div class="player__song--progress player_progress"></div>
+                    <div class="player__song--timeProgess nowTime">00:00</div>
+                    <div class="player__song--timeProgess totalTime">00:00</div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<script src="/js/music-player/utill.js"></script>
+
+
+<script src="/js/music-player/jquery.min.js"></script>
+
+
+<script src="/js/music-player/player.js"></script>
+
+
+                
+                <!-- Music end -->
+
+                <!-- Sharing -->
+                
+                <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
+                <!--  css & js -->
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!-- Sharing -->
+
+                <!-- gitment start -->
+                
+                <!-- gitment end -->
+
+                <!-- 来必力City版安装代码 -->
+                
+                <!-- City版安装代码已完成 -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#查看系统-docker-层面信息"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">查看系统(docker)层面信息</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#查看系统详细信息"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">查看系统详细信息</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#搜索镜像"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">搜索镜像</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#拉取镜像"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">拉取镜像</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#查看本地镜像"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">查看本地镜像</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#创建容器"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">创建容器</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#查看所有容器，包括停止的"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">查看所有容器，包括停止的</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#启动容器"><span class="toc-nav-number">8.</span> <span class="toc-nav-text">启动容器</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#修改镜像的标签"><span class="toc-nav-number">9.</span> <span class="toc-nav-text">修改镜像的标签</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#运行容器（必须先启动容器，才可以进入容器）"><span class="toc-nav-number">10.</span> <span class="toc-nav-text">运行容器（必须先启动容器，才可以进入容器）</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#进入容器"><span class="toc-nav-number">11.</span> <span class="toc-nav-text">进入容器</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#（如果从这个-stdin-中-exit，会导致容器的停止）"><span class="toc-nav-number">11.1.</span> <span class="toc-nav-text">（如果从这个 stdin 中 exit，会导致容器的停止）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#（如果从这个-stdin-中-exit，不会导致容器的停止）"><span class="toc-nav-number">11.2.</span> <span class="toc-nav-text">（如果从这个 stdin 中 exit，不会导致容器的停止）</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#退出容器"><span class="toc-nav-number">12.</span> <span class="toc-nav-text">退出容器</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#强制停止容器"><span class="toc-nav-number">13.</span> <span class="toc-nav-text">强制停止容器</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#从容器中取日志"><span class="toc-nav-number">14.</span> <span class="toc-nav-text">从容器中取日志</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#显示一个运行的容器里面的进程信息"><span class="toc-nav-number">15.</span> <span class="toc-nav-text">显示一个运行的容器里面的进程信息</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#删除容器（不能删除一个正在运行的容器）"><span class="toc-nav-number">16.</span> <span class="toc-nav-text">删除容器（不能删除一个正在运行的容器）</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#一次性删除所有容器"><span class="toc-nav-number">17.</span> <span class="toc-nav-text">一次性删除所有容器</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#容器的导出"><span class="toc-nav-number">18.</span> <span class="toc-nav-text">容器的导出</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#容器的导入"><span class="toc-nav-number">19.</span> <span class="toc-nav-text">容器的导入</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#容器与主机之间的数据拷贝"><span class="toc-nav-number">20.</span> <span class="toc-nav-text">容器与主机之间的数据拷贝</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#将主机-www-runoob目录拷贝到容器96f7f14e99ab的-www目录下"><span class="toc-nav-number">20.1.</span> <span class="toc-nav-text">将主机&#x2F;www&#x2F;runoob目录拷贝到容器96f7f14e99ab的&#x2F;www目录下</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#将主机-www-runoob目录拷贝到容器96f7f14e99ab中，目录重命名为www"><span class="toc-nav-number">20.2.</span> <span class="toc-nav-text">将主机&#x2F;www&#x2F;runoob目录拷贝到容器96f7f14e99ab中，目录重命名为www</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#将容器96f7f14e99ab的-www目录拷贝到主机的-tmp目录中"><span class="toc-nav-number">20.3.</span> <span class="toc-nav-text">将容器96f7f14e99ab的&#x2F;www目录拷贝到主机的&#x2F;tmp目录中</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#Linux_docker" title="Linux_docker">Linux_docker</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="https://blog.csdn.net/yunweimao" target="_blank">Dusign&#39;s Huqi</a></li>
+                    
+                        <li><a href="#" target="_blank">Dusign&#39;s Web</a></li>
+                    
+                        <li><a href="https://github.com/huqi2020" target="_blank">Dusign&#39;s Github</a></li>
+                    
+                        <li><a href="#" target="_blank">Other</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+
+
+<style  type="text/css">
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/huqi2020">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/Hu Qi">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/Hu Qi">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/qi-qi-8-34-58">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; (IT-胡齐) 2020 
+                    <br>
+                    Powered by 
+                    <a href="https://github.com/dusign/hexo-theme-snail" target="_blank" rel="noopener">
+                        <i>hexo-theme-snail</i>
+                    </a> | 
+                    <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0"
+                        width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=dusign&repo=hexo-theme-snail&type=star&count=true">
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- Search -->
+
+<script src="/js/search.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://dusign.net/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- Search -->
+
+    <script type="text/javascript">      
+        var search_path = "search.xml";
+        if (search_path.length == 0) {
+            search_path = "search.xml";
+        }
+    var path = "/" + search_path;
+    searchFunc(path, 'local-search-input', 'local-search-result');
+    </script>
+
+
+<!-- busuanzi -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+
+    
+        <!-- background effects line -->
+        
+
+        
+            <script type="text/javascript" src="/js/mouse-click.js" content='[&quot;🌱&quot;,&quot;just do it&quot;,&quot;🍀&quot;]' color='[&quot;rgb(121,93,179)&quot; ,&quot;rgb(76,180,231)&quot; ,&quot;rgb(184,90,154)&quot;]'></script>
+        
+
+        <!-- background effects end -->
+    
+
+    <!--<script size="50" alpha='0.3' zIndex="-999" src="/js/ribbonStatic.js"></script>-->
+    
+        <script src="/js/ribbonDynamic.js"></script>
+    
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+
+</html>
